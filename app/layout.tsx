@@ -4,7 +4,7 @@ import Navbar from "@/components/other/navbar";
 
 
 export const metadata: Metadata = {
-  title: "Seiri",
+  title: "Patto",
   description: "Created with v0",
 };
 

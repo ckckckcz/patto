@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Download } from "lucide-react";
+import { AppWindow, Download } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export default function Navbar() {
@@ -37,7 +37,7 @@ export default function Navbar() {
         <div className="flex items-center">
           <span className="text-orange-500 text-2xl font-bold">○</span>
           <Link href="/" className="ml-2 text-xl font-semibold ">
-            Seiri
+            Patto
           </Link>
         </div>
 
@@ -73,9 +73,9 @@ export default function Navbar() {
           <Button
             variant="default"
             size="lg"
-            className="bg-white hover:bg-gray-300 rounded-full font-semibold text-black"
+            className="bg-gradient-to-r from-emerald-400 to-cyan-400 text-black font-bold py-5 px-6 transition-all duration-300 ease-in-out hover:from-emerald-500 hover:to-cyan-500 hover:shadow-lg rounded-full"
           >
-            <Download /> Download
+            <AppWindow /> Download
           </Button>{" "}
         </div>
       </motion.nav>
