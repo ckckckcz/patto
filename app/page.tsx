@@ -16,12 +16,12 @@ export default function Page() {
         <section className="flex items-center justify-center min-h-screen px-4 py-12">
           <div className="max-w-4xl mx-auto text-center space-y-3">
             <BlurText 
-              text="Kerja tim berantakan? Sinkronkan dengan Seiri" 
+              text="Kerja tim berantakan? Sinkronkan dengan Patto" 
               delay={150} 
               animateBy="words" 
               direction="top" 
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight text-center"
-              second="italic text-prim-green"
+              second="italic bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent"
             />
 
             {/* Subtitle */}
