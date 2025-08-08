@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-prim-green {
+    color: #93B58C;
+  }
+  
+  .text-prim-green:hover {
+    color: #7DA076;
+  }
+  
+  .bg-prim-green {
+    background-color: #93B58C;
+  }
+  
+  .bg-prim-green:hover {
+    background-color: #7DA076;
+  }
+  
+  .border-prim-green {
+    border-color: #93B58C;
+  }
+  
+  .border-prim-green:hover {
+    border-color: #7DA076;
+  }
+  
+  .fill-prim-green {
+    fill: #93B58C;
+  }
+  
+  .fill-prim-green:hover {
+    fill: #7DA076;
+  }
+  
+  .stroke-prim-green {
+    stroke: #93B58C;
+  }
+  
+  .stroke-prim-green:hover {
+    stroke: #7DA076;
+  }
+  
+  .shadow-green {
+    box-shadow: 0 10px 25px -5px rgba(147, 181, 140, 0.3);
+  }
+  
+  .shadow-green-lg {
+    box-shadow: 0 20px 40px -10px rgba(147, 181, 140, 0.4);
+  }
+  
+  .gradient-green {
+    background: linear-gradient(135deg, #93B58C 0%, #7DA076 100%);
+  }
+}
+
+/* Scroll-triggered animations */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.scroll-animate.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-animate-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.8s ease-out;
+}
+
+.scroll-animate-left.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-animate-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: all 0.8s ease-out;
+}
+
+.scroll-animate-right.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
