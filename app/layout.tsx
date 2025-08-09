@@ -1,13 +1,13 @@
-"use client";
+// "use client";
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/other/navbar";
 import Beams from "@/components/other/backgrounds/beams";
 
-// export const metadata: Metadata = {
-//   title: "Kanso",
-//   description: "Created with v0",
-// };
+export const metadata: Metadata = {
+  title: "Kanso",
+  description: "Created with v0",
+};
 
 export default function RootLayout({
   children,
