@@ -22,7 +22,7 @@ export default function Page() {
               </div>
             </div>
             <BlurText
-              text="Kerja tim berantakan? Sinkronkan dengan Patto"
+              text="Kerja tim berantakan? Sinkronkan dengan Kanso"
               delay={150}
               animateBy="words"
               direction="top"

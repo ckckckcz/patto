@@ -5,7 +5,7 @@ import Navbar from "@/components/other/navbar";
 import Beams from "@/components/other/backgrounds/beams";
 
 // export const metadata: Metadata = {
-//   title: "Patto",
+//   title: "Kanso",
 //   description: "Created with v0",
 // };
 

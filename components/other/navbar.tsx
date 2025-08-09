@@ -13,7 +13,7 @@ export default function Navbar() {
         {/* Logo (Left Aligned) */}
         <Link href="/" className="flex items-center space-x-2 flex-shrink-0">
           <Atom className="h-6 w-6 text-white" /> {/* Placeholder ikon */}
-          <span className="text-xl font-semibold text-white whitespace-nowrap">Patto</span>
+          <span className="text-xl font-semibold text-white whitespace-nowrap">Kanso</span>
         </Link>
 
         {/* Home & Docs Links (Centered for Desktop) */}

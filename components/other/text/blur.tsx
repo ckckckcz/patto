@@ -110,9 +110,9 @@ const BlurText: React.FC<BlurTextProps> = ({
         };
 
         const shouldUseSecond = second && (
-          (animateBy === "words" && segment === "Patto") ||
+          (animateBy === "words" && segment === "Kanso") ||
           (animateBy === "letters" && (index === 2 || index === 3))
-        ); // Apply to 'Patto' in "Patto" or to 'i' and 'r' in "Patto"
+        ); // Apply to 'Kanso' in "Kanso" or to 'i' and 'r' in "Kanso"
 
         return (
           <motion.span
