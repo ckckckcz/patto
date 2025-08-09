@@ -1,84 +1,80 @@
-"use client";
+"use client"
 
-import Link from "next/link";
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { AppWindow, Download } from "lucide-react";
-import { useState, useEffect } from "react";
+import Link from "next/link"
+import { Atom, Search, Menu, Download, AppWindow } from "lucide-react"
+
+import { Button } from "@/components/ui/button"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <div className="absolute justify-center items-center left-72 mt-8">
-      <motion.nav
-        className={`fixed z-50 flex items-center justify-between px-8 py-4 text-white w-[90%] border-0 max-w-6xl transition-all duration-300 ${
-          isScrolled
-            ? "bg-white/20 backdrop-blur-xl shadow-lg rounded-full border border-gray-200/20"
-            : ""
-        }`}
-        initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{
-          duration: 0.6,
-          ease: "easeOut",
-          delay: 0.2,
-        }}
-      >
-        <div className="flex items-center">
-          <span className="text-orange-500 text-2xl font-bold">○</span>
-          <Link href="/" className="ml-2 text-xl font-semibold ">
-            Patto
-          </Link>
-        </div>
+    <div className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-screen-xl font-sora font-bold">
+      <nav className="relative flex items-center justify-between px-6 py-4 bg-gray-100/10 backdrop-blur-xl rounded-full">
+        {/* Logo (Left Aligned) */}
+        <Link href="/" className="flex items-center space-x-2 flex-shrink-0">
+          <Atom className="h-6 w-6 text-white" /> {/* Placeholder ikon */}
+          <span className="text-xl font-semibold text-white whitespace-nowrap">Patto</span>
+        </Link>
 
-        <div className="hidden md:flex space-x-6 font-semibold">
-          <Link href="/pricing" className="">
+        {/* Home & Docs Links (Centered for Desktop) */}
+        <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center space-x-6">
+          <Link href="#" className="text-white hover:text-gray-300 transition-colors">
             Pricing
           </Link>
-          <Link href="/integrations" className="">
-            Integrations
+          <Link href="#" className="text-white hover:text-gray-300 transition-colors">
+            Docs
           </Link>
         </div>
 
-        <div className="md:hidden">
-          <button className="text-gray-600 focus:outline-none">
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
+        {/* Download Button, Search Icon, Mobile Trigger (Right Aligned) */}
+        <div className="flex items-center space-x-4 md:space-x-6">
+          {/* Desktop Buttons */}
+          <div className="hidden md:flex items-center space-x-4">
+            <Button
+              variant="default"
+              className="bg-gradient-to-r from-emerald-400 to-cyan-400 text-black font-bold rounded-full px-4 py-2 text-sm"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16m-7 6h7"
-              ></path>
-            </svg>
-          </button>
-        </div>
+              <AppWindow/>
+              Download
+            </Button>
+          </div>
 
-        <div className="hidden md:block">
-          <Button
-            variant="default"
-            size="lg"
-            className="bg-gradient-to-r from-emerald-400 to-cyan-400 text-black font-bold py-5 px-6 transition-all duration-300 ease-in-out hover:from-emerald-500 hover:to-cyan-500 hover:shadow-lg rounded-full"
-          >
-            <AppWindow /> Download
-          </Button>{" "}
+          {/* Mobile Menu Trigger */}
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button
+                type="button"
+                className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-400 rounded-lg md:hidden hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-600"
+                aria-label="Open main menu"
+              >
+                <span className="sr-only">Open main menu</span>
+                <Menu className="w-5 h-5" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="left" className="bg-gray-900 text-white border-r border-gray-700">
+              <nav className="flex flex-col gap-4 py-6">
+                <Link href="#" className="block py-2 px-3 hover:bg-gray-700 rounded-md">
+                  Home
+                </Link>
+                <Link href="#" className="block py-2 px-3 hover:bg-gray-700 rounded-md">
+                  Docs
+                </Link>
+                <Button
+                  variant="default"
+                  className="bg-blue-600 hover:bg-blue-700 text-white rounded-md px-3 py-2 text-sm font-medium justify-start"
+                >
+                  <Download className="h-4 w-4 mr-2" />
+                  Download
+                </Button>
+                <Button variant="ghost" className="justify-start text-white hover:bg-gray-700">
+                  <Search className="h-5 w-5 mr-2" />
+                  Search
+                </Button>
+              </nav>
+            </SheetContent>
+          </Sheet>
         </div>
-      </motion.nav>
+      </nav>
     </div>
-  );
+  )
 }
