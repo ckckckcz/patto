@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en" className="bg-black">
       <body className="font-dm">
         <Navbar/>
-        <div style={{ width: "100%", height: "800px", position: "absolute" }}>
+        <div style={{ width: "100%", height: "400px", position: "absolute" }}>
           <Beams colorStops={["#34d399", "#22d3ee", "#34d399"]} blend={0.5} amplitude={1.0} speed={0.5} />
         </div>
         {children}
