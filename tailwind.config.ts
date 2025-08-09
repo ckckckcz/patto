@@ -7,7 +7,8 @@ const config: Config = {
       fontFamily: {
         cardo: ['Cardo', 'serif'],
         sora: ['Sora', 'sans-serif'],
-        grand: ['Grandstander', 'cursive']
+        grand: ['Grandstander', 'cursive'],
+        dm: ['DM Sans', 'sans-serif']
       },
       colors: {
         'prim-green': {
